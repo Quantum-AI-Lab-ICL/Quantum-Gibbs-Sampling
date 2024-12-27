@@ -1,2 +1,2 @@
 # Quantum-Gibbs-Sampling
-Library for numerical simulations of the Lindbladian for Quantum Gibbs Sampling
+This repository will contain the code for numerical simulations of fermionic quantum Gibbs sampling from the paper Polynomial Time Quantum Gibbs Sampling for Fermi-Hubbard model at any Temperature, authored by Štěpán Šmíd, Richard Meister, Mario Berta, and Roberto Bondesan.
