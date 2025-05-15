@@ -194,14 +194,14 @@ class GibbsLindbladian(sp.sparse.linalg.LinearOperator):
 
 
 def lindblad_gap(lindbladian):
-    max_eigval = sp.sparse.linalg.eigs(lindbladian, k=1, return_eigenvectors=False)
+    max_eigval = sp.sparse.linalg.eigs(lindbladian, k=1, return_eigenvectors=False, ncv=20, maxiter=10000, tol=1e-9)
     lindbladian.global_shift = -max_eigval[0]
     lindbladian.steady_state_shift = max_eigval[0]
-    shifted_gap = sp.sparse.linalg.eigs(lindbladian, k=1, return_eigenvectors=False)
+    shifted_gap = sp.sparse.linalg.eigs(lindbladian, k=1, return_eigenvectors=False, ncv=20, maxiter=10000, tol=1e-9)
     lindbladian.global_shift = 0
     lindbladian.steady_state_shift = 0
     gap = -(shifted_gap + max_eigval)
-    if np.imag(gap) > 1e-10:
+    if np.imag(gap) > 1e-7:
         warnings.warn(f"Found imaginary part of {np.imag(gap)} in gap")
     return gap[0].real
 
