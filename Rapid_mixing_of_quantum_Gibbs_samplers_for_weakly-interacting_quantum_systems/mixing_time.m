@@ -452,6 +452,9 @@ function [mixingtime] = LindbladianMixingTime(beta,H,n,tolerance,rho,options)
     end
 
     timestep = options.timestep;
+    if(n == 1 && isinf(timestep))
+        timestep = 0.1;
+    end
     order = options.order;
     verbosity = options.verbosity;
     jumps = options.jumps;
