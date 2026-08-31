@@ -1,1 +1,4 @@
+This repository contains the code for numerical simulations of the observable-specific mixing times of quantum Gibbs samplers in the Heisenberg picture from the paper *Constant-time equilibration of observables under rapid Lindbladian dynamics*; authored by Štěpán Šmíd, Richard Meister, Mario Berta, and Roberto Bondesan, and available at https://arxiv.org/abs/2608.28451.
+
+The code is given as a single MATLAB script, and all the choices of the simulation can be made in the main function. Here you can specify the system, temperature, observable of interest, and desired accuracy for the simulation. Further, when calling the simulation, you can select the jump operators and filter function for the Gibbs sampler, as well as modify the timestep size and order for the evolution, or allow additional calculation of the spectral gap of the Lindbladian.
 
